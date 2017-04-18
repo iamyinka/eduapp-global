@@ -1,0 +1,64 @@
+<div id="contentBk" class="clearfix">
+        <div id="content">
+            <div class="topImg clearfix">
+                <%= image_tag("headers/header_1.jpg", :alt => "About Us") %>
+                <p>Contact <strong>Us</strong></p>
+            </div>
+                <div class="wrapper">
+                    <div class="boxInfo contactForm apply-now">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fname:</strong>
+  <%= @student.fname %>
+</p>
+
+<p>
+  <strong>Lname:</strong>
+  <%= @student.lname %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @student.level_id %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @student.course_id %>
+</p>
+
+<p>
+  <strong>Nationality:</strong>
+  <%= @student.nationality %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @student.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @student.phone %>
+</p>
+
+<p>
+  <strong>Countryloc:</strong>
+  <%= @student.countryloc %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>
+
+
+
+                  </div>                    
+                    
+                <div class="clear"></div>
+
+                    
+                
+        </div>
+</div>

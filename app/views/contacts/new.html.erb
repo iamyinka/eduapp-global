@@ -1,0 +1,35 @@
+
+
+
+<section id="about">
+  <div class="container">
+      <div class="page-header">
+        <h1 class="text-center">Contact Us</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="well">
+          <p class="notice alert"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+            
+            <%= bootstrap_form_for @contact do |f| %>
+            
+              <%= f.text_field :name, label: "Name", placeholder: "Your Name" -%>
+
+              <%= f.email_field :email, label: "Email", placeholder: "Your Email Here" -%>
+            
+              <%= f.text_area :comments, label: "Message Area", rows: "10" -%>
+
+              <%= f.file_field :avatar, label: "Uplaod Document in Image Format Here" -%>
+            
+              <%= f.submit "Send Message"  %>
+
+          <% end -%>
+          </div>
+        </div>
+        
+      </div>
+
+  </div>
+</section>
+

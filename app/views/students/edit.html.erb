@@ -1,0 +1,26 @@
+<div id="contentBk" class="clearfix">
+        <div id="content">
+            <div class="topImg clearfix">
+                <%= image_tag("headers/header_1.jpg", :alt => "About Us") %>
+                <p>Contact <strong>Us</strong></p>
+            </div>
+                <div class="wrapper">
+                    <div class="boxInfo contactForm apply-now">
+
+
+<h1>Editing Student</h1>
+
+<%= render 'form', student: @student %>
+
+<%= link_to 'Show', @student %> |
+<%= link_to 'Back', students_path %>
+
+
+</div>                    
+                    
+                <div class="clear"></div>
+
+                    
+                
+        </div>
+</div>

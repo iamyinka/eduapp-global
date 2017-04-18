@@ -1,0 +1,35 @@
+<div id="contentBk" class="clearfix">
+        <div id="content">
+            <div class="topImg clearfix">
+                <%= image_tag("headers/header_1.jpg", :alt => "About Us") %>
+                <p>Forgot Your <strong>Password?</strong></p>
+            </div>
+                <div class="wrapper">
+                <%= devise_error_messages! %>
+                 <div class="boxInfo contactForm apply-now">
+
+
+                    <h2>Forgot your password?</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Send me reset password instructions" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+</div>                    
+                    
+                <div class="clear"></div>
+
+                    
+                
+        </div>

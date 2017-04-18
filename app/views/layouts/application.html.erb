@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Global Edutech Trading &amp; Consultancy</title>
+	<%= csrf_meta_tags %>
+
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+	<div id="logo">
+	  <%= link_to(image_tag("logo.png", :alt => "Logo"), root_path) %>
+	</div>
+	<nav class="navbar navbar-inverse">
+	  <div class="container">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		</div>
+		<div id="navbar" class="collapse navbar-collapse">
+		  <ul class="nav navbar-nav">
+			<li>
+				<%= link_to root_path do %> 
+					<i class="fa fa-home"></i>
+						Home
+				<% end -%>
+			</li>
+			<% if user_signed_in? %>
+
+				<li>
+					<%= link_to apply_online_path do %> 
+					<i class="fa fa-sign-in"></i>
+						Online Application
+				<% end -%>
+				</li>
+				<li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+			<% elsif agent_signed_in? %>
+				<li><%= link_to 'Online Application', contact_path %> </li>
+				<li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+			<% else %>
+				<li>
+					<%= link_to new_user_registration_path do %> 
+					<i class="fa fa-sign-in"></i>
+						Apply Online
+					<% end -%>
+				</li>
+				
+
+				<li>
+					<%= link_to new_agent_session_path do %> 
+					<i class="fa fa-list-alt"></i>
+						Agent Listings
+					<% end -%>
+				</li>
+				
+			<% end %>
+		  </ul>
+
+		   <ul class="nav navbar-nav navbar-right">
+		   <% if user_signed_in? %>
+		   <li><%= link_to 'About GETC', about_path %></li>
+
+			<% else %>
+			
+			<li>
+				<%= link_to new_agent_session_path do %> 
+				<i class="fa fa-lock"></i>
+					Agent Login
+				<% end -%>
+			</li>
+			<% end %>
+
+			<li>
+				<%= link_to new_contact_path do %> 
+				<i class="fa fa-envelope"></i>
+					Email Us
+				<% end -%>
+			</li>
+			
+		  </ul>
+		</div><!--/.nav-collapse -->
+	  </div>
+	</nav>   
+		
+	   
+	<%= yield %>
+
+	<hr>
+	<footer>
+	  <div class="container">
+		<p class="pull-left">&copy; 2017 Copyright GETC.</p>
+		<p class="pull-right">Creative Design By: <a href="#">Yinka Ash</a></p>
+	  </div>
+	</footer>
+  </body>
+</html>
