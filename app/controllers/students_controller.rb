@@ -30,7 +30,7 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.save
-        format.html { redirect_to about_path, notice: 'Application Received! We will contact you shortly.' }
+        format.html { redirect_to new_contact_path, notice: 'Application Received! We will contact you shortly. You may leave us a message if you have any questions or comments. Thank You for Applying With GETC.' }
         format.json { render :show, status: :created, location: @student }
       else
         format.html { render :new }
