@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   get 'about' => 'welcome#about'
 
-  get 'contact' => 'welcome#contact'
+  get 'listings' => 'welcome#listings'
 
   get 'apply-online' => 'students#new'
 

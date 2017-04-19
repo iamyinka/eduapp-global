@@ -13,9 +13,8 @@ class ContactsController < ApplicationController
       name = params[:contact][:name]
       email = params[:contact][:email]
       body = params[:contact][:comments]
-      avatar = params[:contact][:avatar]
 
-      ContactMailer.contact_email(name, email, body, avatar).deliver
+      ContactMailer.contact_email(name, email, body).deliver
       
       flash[:notice] = "Message Sent Successfully"
       redirect_to new_contact_path
@@ -29,7 +28,7 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:name, :email, :comments, :avatar)   
+    params.require(:contact).permit(:name, :email, :comments)   
   end
 
 
