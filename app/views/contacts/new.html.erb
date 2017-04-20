@@ -1,4 +1,4 @@
-
+<%= content_for :title, 'Global Edutech Trading & Consultancy | Contact Us' %>
 
 
 <section id="about">
@@ -7,9 +7,9 @@
         <h1 class="text-center">Contact Us</h1>
       </div>
       <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-5">
           <div class="well">
-          <p class="notice alert"><%= notice %></p>
+          <p class="notice alert-success"><%= notice %></p>
           <p class="alert"><%= alert %></p>
             
             <%= bootstrap_form_for @contact, :method => :post, :multipart => true do |f| %>
@@ -24,9 +24,22 @@
 
           <% end -%>
           </div>
+
+
         </div>
         
+        <div class="col-md-7 col-sm-12 col-xs-12">
+            <h4 class="lead">We are located here...</h1>
+            
+          
+         
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.6642634329974!2d101.67917011414569!3d3.1827143538344433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4872f67886ab%3A0x7daf11e01b0848ed!2sGlobal+Edutech+Trading+%26+Consultancy!5e0!3m2!1sen!2smy!4v1492675432851" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          
+        
+        </div>
       </div>
+
+      
 
   </div>
 </section>

@@ -1,3 +1,5 @@
+<%= content_for :title, 'Global Edutech Trading & Consultancy | Submit Documents' %>
+
 <div class="container">
 	<div class="page-header">
 		<h1 class="text-center">New Document Submission</h1>
@@ -5,7 +7,12 @@
 
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
-			<%= render 'form' -%>
+			<div class="well">
+				<p class="notice alert-success"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+				<%= render 'form' -%>
+			</div>
+			
 		</div>
 	</div>
 </div>

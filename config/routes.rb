@@ -30,8 +30,6 @@ Rails.application.routes.draw do
 
   get 'apply-online' => 'students#new'
 
-  get 'apply' => 'welcome#apply'
-
   post "apply-online", to: "students#create"
   put "apply-online", to: "students#update"
   match "apply-online" => "students#create", :via => "post"
