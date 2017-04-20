@@ -1,0 +1,6 @@
+<%= bootstrap_form_for @doc do |f| -%>
+	<%= f.text_field :title, label: "Title" -%>
+	<%= f.text_area :description, label: "Description" -%>
+	<%= f.file_field :document, label: "Upload Document(s)" -%> <p><small>Only jpg, jpeg and png file extensions are allowed.</small></p>
+	<%= f.submit "Post Document" -%>
+<% end -%>

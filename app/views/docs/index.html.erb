@@ -1,0 +1,20 @@
+<div class="container">
+	<div class="page-header">
+		<h1 class="text-center">All Documents</h1>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="well">
+				<% @docs.each do |doc| -%>
+					<h2><%= link_to doc.title, doc_path(doc)-%></h2>
+					<p><%= truncate(doc.description, { length: 30 })  -%></p>
+				<% end -%>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+
+

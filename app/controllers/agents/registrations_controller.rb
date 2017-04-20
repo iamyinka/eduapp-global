@@ -4,7 +4,11 @@ before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   def new
-    super
+    if user_signed_in?
+      redirect_to new_contact_path, notice: "You can't access this area as a Student!"
+    else
+     super
+    end
   end
 
   # POST /resource
@@ -50,11 +54,11 @@ before_action :configure_account_update_params, only: [:update]
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    super(resource)
+    new_agent_session_path
   end
 
   # The path used after sign up for inactive accounts.
   def after_inactive_sign_up_path_for(resource)
-    super(resource)
+    new_agent_session_path
   end
 end

@@ -39,19 +39,32 @@
 					<%= link_to apply_online_path do %> 
 					<i class="fa fa-sign-in"></i>
 						Online Application
+					<% end -%>
+				</li>
+				<li>
+				<%= link_to destroy_user_session_path, method: :delete do %>
+					<i class="fa fa-unlock-alt"></i>
+					Log Out
 				<% end -%>
 				</li>
-				<li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+			
 			<% elsif agent_signed_in? %>
-				<li><%= link_to 'Online Application', contact_path %> </li>
-				<li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-			<% else %>
+			<li>
+		   <%= link_to about_path do %>
+		   	<i class="fa fa-users"></i>
+					About GETC
+				<% end -%>
+		   </li>
+			<% else -%>
 				<li>
 					<%= link_to new_user_registration_path do %> 
 					<i class="fa fa-sign-in"></i>
 						Apply Online
 					<% end -%>
 				</li>
+			<% end -%>
+
+			
 				
 
 				<li>
@@ -61,16 +74,43 @@
 					<% end -%>
 				</li>
 				
-			<% end %>
+		
 		  </ul>
 
 		   <ul class="nav navbar-nav navbar-right">
 		   <% if user_signed_in? %>
-		   <li><%= link_to 'About GETC', about_path %></li>
+		   <li>
+		   <%= link_to about_path do %>
+		   	<i class="fa fa-users"></i>
+					About GETC
+				<% end -%>
+		   </li>
 
-			<% else %>
 			
+			<% elsif agent_signed_in? %>
+				<li>
+					<%= link_to new_doc_path do %>
+						<i class="fa fa-check"></i>
+						Submit Documents
+					<% end -%>
+				</li>
+
+				<li>
+					<%= link_to docs_path do %>
+						<i class="fa fa-list"></i>
+						All Documents
+					<% end -%>
+				</li>
+
+				<li>
+				<%= link_to destroy_agent_session_path, method: :delete do %>
+					<i class="fa fa-unlock-alt"></i>
+					Sign Out
+				<% end -%>
+				</li>
+				<% else -%>
 			<li>
+
 				<%= link_to new_agent_session_path do %> 
 				<i class="fa fa-lock"></i>
 					Agent Login

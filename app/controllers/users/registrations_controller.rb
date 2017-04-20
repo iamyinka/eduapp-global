@@ -5,7 +5,11 @@ before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   def new
-    super
+    if agent_signed_in?
+      redirect_to new_contact_path, notice: "You are already signed in as Agent"
+    else
+      super
+    end
   end
 
   # POST /resource
