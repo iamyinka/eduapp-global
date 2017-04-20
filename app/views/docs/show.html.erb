@@ -7,7 +7,7 @@
 
 			<p><%= @doc.description -%></p>
 
-			<%= link_to (image_tag (@doc.document.url if @doc.document?), class: "img-thumbnail docImg"), @doc.document.url if @doc.document? -%>
+			<%= link_to image_tag(@doc.document, class: "img-thumbnail docImg"), @doc.document.url -%>
 			<br><br>
 			<%= link_to "Back", docs_path -%> |
 			<%= link_to "Edit Document", edit_doc_path(@doc) -%> | 
