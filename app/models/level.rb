@@ -1,3 +1,0 @@
-class Level < ApplicationRecord
-	
-end

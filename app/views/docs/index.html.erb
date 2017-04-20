@@ -7,8 +7,9 @@
 		<div class="col-md-6 col-md-offset-3">
 			<div class="well">
 				<% @docs.each do |doc| -%>
-					<h2><%= link_to doc.title, doc_path(doc)-%></h2>
-					<p><%= truncate(doc.description, { length: 30 })  -%></p>
+						<h2><%= link_to doc.title, doc_path(doc)-%></h2>
+						<small>submitted <%= time_ago_in_words(doc.created_at) -%> ago by <%= current_agent.name -%></small>
+						<p><%= truncate(doc.description, { length: 30 })  -%></p>
 				<% end -%>
 			</div>
 			

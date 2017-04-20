@@ -3,15 +3,15 @@ class DocsController < ApplicationController
 	before_action :find_doc, only: [:show, :edit, :update, :destroy]
 
   def index
-  	@docs = Doc.all.order("created_at DESC")
+  	@docs = current_agent.docs.all.order("created_at DESC")
   end
 
   def new
-  	@doc = Doc.new
+  	@doc = current_agent.docs.build
   end
 
   def create
-  	@doc = Doc.new(doc_params)
+  	@doc = current_agent.docs.build(doc_params)
 
   	if @doc.save
   		flash[:notice] = "Document Posted Successfully"
@@ -53,4 +53,6 @@ class DocsController < ApplicationController
   def doc_params
   	params.require(:doc).permit(:title, :description, :document)
   end
+
+  
 end
