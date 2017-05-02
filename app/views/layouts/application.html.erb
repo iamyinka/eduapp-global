@@ -35,6 +35,14 @@
 						Home
 				<% end -%>
 			</li>
+
+			<li>
+		   <%= link_to about_path do %>
+		   	<i class="fa fa-users"></i>
+					About GETC
+				<% end -%>
+		   </li>
+
 			<% if user_signed_in? %>
 
 				<li>
@@ -50,14 +58,8 @@
 				<% end -%>
 				</li>
 			
-			<% elsif agent_signed_in? %>
-			<li>
-		   <%= link_to about_path do %>
-		   	<i class="fa fa-users"></i>
-					About GETC
-				<% end -%>
-		   </li>
-			<% else -%>
+			
+			<% elsif !current_user && !current_agent -%>
 				<li>
 					<%= link_to new_user_registration_path do %> 
 					<i class="fa fa-sign-in"></i>
@@ -80,16 +82,11 @@
 		  </ul>
 
 		   <ul class="nav navbar-nav navbar-right">
-		   <% if user_signed_in? %>
-		   <li>
-		   <%= link_to about_path do %>
-		   	<i class="fa fa-users"></i>
-					About GETC
-				<% end -%>
-		   </li>
+		   
+		   
 
 			
-			<% elsif agent_signed_in? %>
+			<% if agent_signed_in? %>
 				<li>
 					<%= link_to new_doc_path do %>
 						<i class="fa fa-check"></i>
@@ -110,7 +107,7 @@
 					Sign Out
 				<% end -%>
 				</li>
-				<% else -%>
+				<% elsif !current_user -%>
 			<li>
 
 				<%= link_to new_agent_session_path do %> 
